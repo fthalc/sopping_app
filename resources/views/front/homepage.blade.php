@@ -4,17 +4,7 @@
     <div class="container px-4 px-lg-5 mt-5">
 
         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-            <div class="col mb-5">
-                <div class="card-title" style="font-weight: bolder;text-align: center">KATEGORİLER</div>
-                <div class="list-group">
-                    <a style="border-radius: 10px;margin-top: 5px;margin-bottom: 5px" class="list-group-item text-light bg-dark" href="#">Avize<span style="font-weight: bolder;border-radius: 50px" class="text-black bg-white float-end">12</span></a>
-                    <a style="border-radius: 10px;margin-top: 5px;margin-bottom: 5px" class="list-group-item text-light bg-dark" href="#">Lambader<span style="font-weight: bolder;border-radius: 50px" class="text-black bg-white float-end">12</span></a>
-                    <a style="border-radius: 10px;margin-top: 5px;margin-bottom: 5px" class="list-group-item text-light bg-dark" href="#">Anahtar<span style="font-weight: bolder;border-radius: 50px" class="text-black bg-white float-end">12</span></a>
-                    <a style="border-radius: 10px;margin-top: 5px;margin-bottom: 5px" class="list-group-item text-light bg-dark" href="#">Spot<span style="font-weight: bolder;border-radius: 50px" class="text-black bg-white float-end">12</span></a>
-                    <a style="border-radius: 10px;margin-top: 5px;margin-bottom: 5px" class="list-group-item text-light bg-dark" href="#">Elektrik aletleri<span style="font-weight: bolder;border-radius: 50px" class="text-black bg-white float-end">12</span></a>
-                </div>
-            </div>
-
+            @include('front.widgets.category')
             <div class="col mb-5">
                 <div class="card h-100">
                     <!-- Product image-->

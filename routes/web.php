@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('front.homepage');
-});
+Route::get('/','App\Http\Controllers\Front\Homepage@index')->name('homepage');
 Route::prefix('admin')->name('admin.')->group(function (){
     Route::get('/girisyap','App\Http\Controllers\Back\AuthController@login')->name('login');
     Route::post('/girisyap','App\Http\Controllers\Back\AuthController@loginPost')->name('login.post');
