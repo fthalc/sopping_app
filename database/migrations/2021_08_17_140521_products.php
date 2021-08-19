@@ -16,13 +16,13 @@ class Products extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('category_id');
-            $table->string('title');
+            $table->string('name');
+            $table->string('price');
             $table->string('image');
             $table->string('description');
             $table->integer('hit')->default(0);
             $table->string('slug');
             $table->timestamps();
-
             $table->foreign('category_id')->references('id')->on('categories');
         });
     }

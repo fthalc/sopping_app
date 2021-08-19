@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/','App\Http\Controllers\Front\Homepage@index')->name('homepage');
+Route::get('/kategori/{category}','App\Http\Controllers\Front\Homepage@category')->name('category');
+Route::get('/test','App\Http\Controllers\Front\Homepage@viewtest')->name('viewtest');
+Route::get('/{category}/{slug}','App\Http\Controllers\Front\Homepage@single')->name('single');
+
 Route::prefix('admin')->name('admin.')->group(function (){
     Route::get('/girisyap','App\Http\Controllers\Back\AuthController@login')->name('login');
     Route::post('/girisyap','App\Http\Controllers\Back\AuthController@loginPost')->name('login.post');

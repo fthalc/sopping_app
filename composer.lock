@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2c498483e5e9b702875a72c997729431",
+    "content-hash": "ca6ee6c09136ffaf6dcf8828d56ebf22",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -425,6 +425,71 @@
                 }
             ],
             "time": "2020-12-29T14:50:06+00:00"
+        },
+        {
+            "name": "fakerphp/faker",
+            "version": "v1.15.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FakerPHP/Faker.git",
+                "reference": "89c6201c74db25fa759ff16e78a4d8f32547770e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FakerPHP/Faker/zipball/89c6201c74db25fa759ff16e78a4d8f32547770e",
+                "reference": "89c6201c74db25fa759ff16e78a4d8f32547770e",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1 || ^8.0",
+                "psr/container": "^1.0",
+                "symfony/deprecation-contracts": "^2.2"
+            },
+            "conflict": {
+                "fzaninotto/faker": "*"
+            },
+            "require-dev": {
+                "bamarni/composer-bin-plugin": "^1.4.1",
+                "ext-intl": "*",
+                "symfony/phpunit-bridge": "^4.4 || ^5.2"
+            },
+            "suggest": {
+                "ext-curl": "Required by Faker\\Provider\\Image to download images.",
+                "ext-dom": "Required by Faker\\Provider\\HtmlLorem for generating random HTML.",
+                "ext-iconv": "Required by Faker\\Provider\\ru_RU\\Text::realText() for generating real Russian text.",
+                "ext-mbstring": "Required for multibyte Unicode string functionality."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "v1.15-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Faker\\": "src/Faker/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "François Zaninotto"
+                }
+            ],
+            "description": "Faker is a PHP library that generates fake data for you.",
+            "keywords": [
+                "data",
+                "faker",
+                "fixtures"
+            ],
+            "support": {
+                "issues": "https://github.com/FakerPHP/Faker/issues",
+                "source": "https://github.com/FakerPHP/Faker/tree/v1.15.0"
+            },
+            "time": "2021-07-06T20:39:40+00:00"
         },
         {
             "name": "fruitcake/laravel-cors",
@@ -2327,6 +2392,60 @@
                 }
             ],
             "time": "2021-08-11T01:06:55+00:00"
+        },
+        {
+            "name": "staudenmeir/eloquent-has-many-deep",
+            "version": "v1.14",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/staudenmeir/eloquent-has-many-deep.git",
+                "reference": "8f92a9cb479eb890bcb3eb1b44af500c6bf77790"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/staudenmeir/eloquent-has-many-deep/zipball/8f92a9cb479eb890bcb3eb1b44af500c6bf77790",
+                "reference": "8f92a9cb479eb890bcb3eb1b44af500c6bf77790",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "^8.0",
+                "php": "^7.3|^8.0"
+            },
+            "require-dev": {
+                "illuminate/pagination": "^8.0",
+                "laravel/homestead": "^11.0|^12.0",
+                "phpunit/phpunit": "^9.3",
+                "scrutinizer/ocular": "^1.8",
+                "staudenmeir/eloquent-eager-limit": "^1.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Staudenmeir\\EloquentHasManyDeep\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jonas Staudenmeir",
+                    "email": "mail@jonas-staudenmeir.de"
+                }
+            ],
+            "description": "Laravel Eloquent HasManyThrough relationships with unlimited levels",
+            "support": {
+                "issues": "https://github.com/staudenmeir/eloquent-has-many-deep/issues",
+                "source": "https://github.com/staudenmeir/eloquent-has-many-deep/tree/v1.14"
+            },
+            "funding": [
+                {
+                    "url": "https://paypal.me/JonasStaudenmeir",
+                    "type": "custom"
+                }
+            ],
+            "time": "2021-08-16T20:38:47+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -5187,71 +5306,6 @@
                 "source": "https://github.com/facade/ignition-contracts/tree/1.0.2"
             },
             "time": "2020-10-16T08:27:54+00:00"
-        },
-        {
-            "name": "fakerphp/faker",
-            "version": "v1.15.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/FakerPHP/Faker.git",
-                "reference": "89c6201c74db25fa759ff16e78a4d8f32547770e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/FakerPHP/Faker/zipball/89c6201c74db25fa759ff16e78a4d8f32547770e",
-                "reference": "89c6201c74db25fa759ff16e78a4d8f32547770e",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.1 || ^8.0",
-                "psr/container": "^1.0",
-                "symfony/deprecation-contracts": "^2.2"
-            },
-            "conflict": {
-                "fzaninotto/faker": "*"
-            },
-            "require-dev": {
-                "bamarni/composer-bin-plugin": "^1.4.1",
-                "ext-intl": "*",
-                "symfony/phpunit-bridge": "^4.4 || ^5.2"
-            },
-            "suggest": {
-                "ext-curl": "Required by Faker\\Provider\\Image to download images.",
-                "ext-dom": "Required by Faker\\Provider\\HtmlLorem for generating random HTML.",
-                "ext-iconv": "Required by Faker\\Provider\\ru_RU\\Text::realText() for generating real Russian text.",
-                "ext-mbstring": "Required for multibyte Unicode string functionality."
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-main": "v1.15-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Faker\\": "src/Faker/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "François Zaninotto"
-                }
-            ],
-            "description": "Faker is a PHP library that generates fake data for you.",
-            "keywords": [
-                "data",
-                "faker",
-                "fixtures"
-            ],
-            "support": {
-                "issues": "https://github.com/FakerPHP/Faker/issues",
-                "source": "https://github.com/FakerPHP/Faker/tree/v1.15.0"
-            },
-            "time": "2021-07-06T20:39:40+00:00"
         },
         {
             "name": "filp/whoops",

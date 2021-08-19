@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class Product extends Model
 {
     use HasFactory;
-    public function productCount(){
-       return $this->hasMany('App\Models\Product','category_id','id')->count();
+    function getCategory(){
+        return $this->hasOne('App\Models\Category','id','category_id');
     }
 }

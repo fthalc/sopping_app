@@ -1,8 +1,8 @@
 @charset "UTF-8";
 /*!
-* Start Bootstrap - Shop Homepage v5.0.3 (https://startbootstrap.com/template/shop-homepage)
+* Start Bootstrap - Shop Item v5.0.3 (https://startbootstrap.com/template/shop-item)
 * Copyright 2013-2021 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-shop-homepage/blob/master/LICENSE)
+* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-shop-item/blob/master/LICENSE)
 */
 /*!
  * Bootstrap v5.1.0 (https://getbootstrap.com/)
@@ -10,9 +10,6 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
-.fatih:hover{
-    background-color: red;
-}
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
