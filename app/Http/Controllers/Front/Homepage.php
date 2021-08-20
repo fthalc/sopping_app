@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\Sepet;
 use Illuminate\Http\Request;
 
 //Models
@@ -12,13 +13,14 @@ use App\Models\Product;
 class Homepage extends Controller
 {
     public function index(){
-        $data['product']=Product::orderBy('created_at','DESC')->get();
+        $data['product']=Product::orderBy('created_at','DESC')->limit(10)->get();
+        // $avize = Product::where('category_id',1)->orderBy('created_at','DESC')->limit(2)->get();
         $data['categories'] = Category::orderBy('name','ASC')->get();
         return view('front.homepage',$data);
     }
     public function single($category,$slug){
         $category = Category::whereSlug($category)->first() ?? abort(404);
-        $product=Product::whereSlug($slug)->whereCategoryId($category->id)->first() ?? abort(403,'Böyle bir yazı bulunamadı.');
+        $product=Product::whereSlug($slug)->whereCategoryId($category->id)->first() ?? abort(403,'Böyle bir ürün bulunamadı.');
         $product->increment('hit');
         $data['product'] = $product;
         $data['categories'] = Category::orderBy('name','ASC')->get();
@@ -32,8 +34,5 @@ class Homepage extends Controller
         $data['product']=Product::where('category_id',$category->id)->orderBy('created_at','DESC')->get();
         $data['categories'] = Category::orderBy('name','ASC')->get();
         return view('front.category',$data);
-    }
-    public function viewtest(){
-        return view('front.cartpage');
     }
 }

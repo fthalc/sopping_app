@@ -14,13 +14,17 @@
                         <span style="font-weight: bolder">Ürünün Fiyatı : {{$product->price}} ₺</span>
                     </div>
                     <p class="lead">{{$product->description}}</p>
-                    <div class="d-flex">
-                        <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
-                        <button class="btn btn-outline-dark flex-shrink-0" type="button">
+                    <form action="{{route('sepet.create')}}" method="post">
+                        @csrf
+                        <input type="hidden" name="urun_id" value="{{$product->id}}">
+                        <input type="number" name="urun_adet" value="1">
+                        <button class="btn btn-outline-dark flex-shrink-0" type="submit">
                             <i class="bi-cart-fill me-1"></i>
-                            Add to cart
+                            Sepete Ekle
                         </button>
-                    </div>
+                    </form>
+
+                    <hr>
                     <div class="float-end">Bu ürünü {{$product->hit}} kişi görüntülendi</div>
                 </div>
 
@@ -28,6 +32,7 @@
         </div>
     </section>
     @include('front.widgets.relatedProduct')
+    @include('front.layouts.footer')
 
 @endsection
 
