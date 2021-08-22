@@ -14,14 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-
+//Admin işlemleri.... giriş başarılı değilse-
 Route::prefix('admin')->name('admin.')->group(function (){
     Route::get('/girisyap','App\Http\Controllers\Back\AuthController@login')->name('login');
     Route::post('/girisyap','App\Http\Controllers\Back\AuthController@loginPost')->name('login.post');
 });
-//Admin işlemleri....
+//Admin işlemleri.... giriş yapmışsa
 Route::prefix('admin')->middleware('isAdmin')->name('admin.')->group(function (){
     Route::get('/panel','App\Http\Controllers\Back\Dashboard@index')->name('dashboard');
+    Route::resource('urunler','App\Http\Controllers\Back\ProductController');
     Route::get('/cikisyap','App\Http\Controllers\Back\AuthController@logout')->name('logout');
 });
 Route::get('/','App\Http\Controllers\Front\Homepage@index')->name('homepage');
@@ -31,6 +32,7 @@ Route::get('sepet','App\Http\Controllers\SepetController@index')->name('sepet');
 Route::post('sepet/create','App\Http\Controllers\SepetController@create')->name('sepet.create');
 Route::get('sepet/delete/{id}','App\Http\Controllers\SepetController@delete')->name('sepet.delete');
 Route::get('siparis','App\Http\Controllers\SiparisController@index')->name('siparis');
+Route::post('sepet/update','App\Http\Controllers\SepetController@update')->name('sepet.update');
 
 
 

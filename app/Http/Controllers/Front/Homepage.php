@@ -25,7 +25,7 @@ class Homepage extends Controller
         $data['product'] = $product;
         $data['categories'] = Category::orderBy('name','ASC')->get();
         $category_id=$product->category_id;
-        $related_products = Product::where('category_id',$category_id)->get();
+        $related_products = Product::where('category_id',$category_id)->where('id','!=',$product->id)->get();
         return view('front.single',$data,compact('product','related_products'));
     }
     public  function category($slug){

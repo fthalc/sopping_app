@@ -31,7 +31,7 @@
 
                     Cart
 
-                    <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                    <span class="badge bg-dark text-white ms-1 rounded-pill">{{\App\Models\Sepet::all()->sum('urun_adet')}}</span>
                 </a>
             </form>
         </div>

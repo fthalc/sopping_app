@@ -26,15 +26,14 @@
                                         <figure class="itemside align-items-center">
                                             <div class="aside"><img style="width: 100px;" src="{{$sepet->getProduct->image}}" class="img-sm"></div>
                                             <figcaption class="info"> <a href="#" class="title text-dark" data-abc="true">{{$sepet->getProduct->name}}</a>
-                                                <p class="small text-muted">Kategori : {{$sepet->getProduct->name}} <br> Brand: Cantabil</p>
+                                                <p class="small text-muted"> asfasfasf<br> Brand: Cantabil</p>
                                             </figcaption>
                                         </figure>
                                     </td>
                                     <td>
                                         <input type="number" name="urun_adet" required max="10" value="{{$sepet->urun_adet}}">
-                                        <button>
-                                            Güncelle
-                                        </button>
+                                        <a href="{{route('sepet.update',$sepet->getProduct->id)}}" class="btn btn-light btn-round" data-abc="true"> Remove</a>
+
                                     </td>
                                     <td>
                                         <div class="price-wrap">
@@ -65,7 +64,12 @@
                                 <dd class="text-right ml-3"></dd>
                             </dl>
                             <hr>
-                            <a href="{{route('siparis')}}" class="btn btn-out btn-primary btn-square btn-main" data-abc="true">Alışverişi Tamamla</a>
+                            @if($total===0)
+                                <button disabled class="btn btn-out btn-primary btn-square btn-main" data-abc="true">Alışverişi Tamamla</button>
+                            @else
+                                <a href="{{route('siparis')}}" class="btn btn-out btn-primary btn-square btn-main" data-abc="true">Alışverişi Tamamla</a>
+                            @endif
+
                             <a href="#" class="btn btn-out btn-success btn-square btn-main" data-abc="true">Continue Shopping</a>
                         </div>
                     </div>

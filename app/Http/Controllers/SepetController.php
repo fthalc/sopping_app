@@ -6,6 +6,7 @@ use App\Models\Product;
 use App\Models\Sepet;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use function Sodium\compare;
 
 class SepetController extends Controller
 {
@@ -73,7 +74,8 @@ class SepetController extends Controller
      */
     public function edit($id)
     {
-        //
+        return $id;
+
     }
 
     /**
@@ -83,9 +85,10 @@ class SepetController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update( $id)
     {
-        //
+        return redirect('sepet');
+
     }
 
     /**

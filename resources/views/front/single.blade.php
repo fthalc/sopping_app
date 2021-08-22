@@ -3,18 +3,15 @@
     <section class="py-5">
         <div class="container px-4 px-lg-5 my-5">
             <div class="row gx-4 gx-lg-5">
-                <div class="col-md-3">
-                    <div class="row">@include('front.widgets.category')</div>
-                </div>
-                <div class="col-md-5"><img class="card-img-top mb-5 mb-md-0" src="{{$product->image}}" alt="..." /></div>
-                <div class="col-md-4">
+                <div class="col-md-7"><img class="card-img-top mb-5 mb-md-0" src="{{$product->image}}" alt="..." /></div>
+                <div class="col-md-5">
                     <div class="small mb-1"></div>
                     <h1 class="display-5 fw-bolder">{{$product->name}}</h1>
                     <div class="fs-5 mb-5">
                         <span style="font-weight: bolder">Ürünün Fiyatı : {{$product->price}} ₺</span>
                     </div>
                     <p class="lead">{{$product->description}}</p>
-                    <form action="{{route('sepet.create')}}" method="post">
+                    <form action="{{route('sepet.create',$product->id)}}" method="post">
                         @csrf
                         <input type="hidden" name="urun_id" value="{{$product->id}}">
                         <input type="number" name="urun_adet" value="1">

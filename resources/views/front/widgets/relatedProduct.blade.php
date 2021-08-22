@@ -13,7 +13,7 @@
                             <div class="text-center">
                                 <!-- Product name-->
                                 <a class="text-decoration-none text-black" href="#"><h5 class="fw-bolder">{{$related_product->name}}</h5></a>
-                                <h6 class="fw-lighter">{{Str::limit($related_product->description,30)}}</h6>
+                                <h6 class="fw-lighter">{{\Illuminate\Support\Str::limit($related_product->description,30)}}</h6>
                                 <h6 class="fw-lighter">{{$related_product->created_at->diffForHumans()}}</h6>
                                 <!-- Product price-->
                                 <div>
