@@ -15,7 +15,7 @@
         <hr class="sidebar-divider my-0">
 
         <!-- Nav Item - Dashboard -->
-        <li class="nav-item active">
+        <li class="nav-item @if(\Illuminate\Support\Facades\Request::segment(2)=='panel') active @endif " >
             <a class="nav-link" href="{{route('admin.dashboard')}}">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Panel</span></a>
@@ -31,15 +31,15 @@
 
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+            <a class="nav-link collapsed @if(\Illuminate\Support\Facades\Request::segment(2)=='urunler') in @else collapsed  @endif " href="#" data-toggle="collapse" data-target="#collapseTwo"
                aria-expanded="true" aria-controls="collapseTwo">
-                <i class="fas fa-fw fa-edit"></i>
+                <i class="fas fa-fw fa-edit "></i>
                 <span>Ürünler</span>
             </a>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div id="collapseTwo" class="collapse @if(\Illuminate\Support\Facades\Request::segment(2)=='urunler') show @endif" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Ürün İşlemleri</h6>
-                    <a class="collapse-item" href="buttons.html">Tüm Ürünler</a>
+                    <a class="collapse-item @if(\Illuminate\Support\Facades\Request::segment(2)=='urunler') active @endif" href="{{route('admin.urunler.index')}}">Tüm Ürünler</a>
                     <a class="collapse-item" href="cards.html">Ürün Oluştur</a>
                 </div>
             </div>
@@ -48,7 +48,7 @@
         <!-- Nav Item - Utilities Collapse Menu -->
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-               aria-expanded="true" aria-controls="collapseUtilities">
+               aria-expanded="true" aria-controls="collapseUtiFdiblities">
                 <i class="fas fa-fw fa-wrench"></i>
                 <span>Utilities</span>
             </a>

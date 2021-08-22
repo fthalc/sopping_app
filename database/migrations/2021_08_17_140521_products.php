@@ -21,6 +21,7 @@ class Products extends Migration
             $table->string('image');
             $table->string('description');
             $table->integer('hit')->default(0);
+            $table->integer('status')->default(0)->comment('0:pasif 1:aktif');
             $table->string('slug');
             $table->timestamps();
             $table->foreign('category_id')->references('id')->on('categories');
