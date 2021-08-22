@@ -1,16 +1,7 @@
 @extends('front.layouts.master')
 @section('content')
 <section class="py-4">
-
-    <header class="bg-dark py-5">
-        <div class="container px-4 px-lg-5 my-5">
-            <div class="text-center text-white">
-                <h1 class="display-4 fw-bolder">Shop in style</h1>
-                <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
-            </div>
-        </div>
-    </header>
-
+    @include('front.widgets.divider')
     <div class=" row container px-4 px-lg-5 mt-5">
         <div class="col-md-3">
             <div class="row">@include('front.widgets.category')</div>
@@ -47,5 +38,6 @@
         </div>
     </div>
 </section>
+
 @include('front.layouts.footer')
 @endsection
