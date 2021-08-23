@@ -16,7 +16,7 @@ class Homepage extends Controller
         $data['product']=Product::orderBy('created_at','DESC')->limit(10)->get();
         // $avize = Product::where('category_id',1)->orderBy('created_at','DESC')->limit(2)->get();
         $data['categories'] = Category::orderBy('name','ASC')->get();
-        $data2['product2']=Product::orderBy('created_at','DESC')->limit(10)->get();
+        $data2['product2    ']=Product::orderBy('created_at','DESC')->limit(10)->get();
         return view('front.homepage',$data,$data2);
     }
     public function single($category,$slug){

@@ -13,32 +13,32 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                         <tr>
-                            <th>Ürün Fotoğrafı</th>
+                            <th style="width: 100px;">Ürün Fotoğrafı</th>
                             <th>Ürün Adı</th>
                             <th>Ürün Fiyatı</th>
                             <th>Kategori</th>
-                            <th>Ürün Açıklaması</th>
+                            <th style="width: 250px;">Ürün Açıklaması</th>
                             <th>Hit</th>
                             <th>Oluşturulma Tarihi</th>
                             <th>Durum</th>
-                            <th>işlemler</th>
+                            <th style="width: 100px;">işlemler</th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($products as $product)
                         <tr>
                             <td>
-                                <img src="{{$product->image}}" width="150">
+                                <img src="{{$product->image}}" width="100">
                             </td>
-                            <td>{{$product->name}}</td>
+                            <td width="100px">{{$product->name}}</td>
                             <td>{{$product->price}} ₺</td>
                             <td>{{$product->getCategory->name}}</td>
-                            <td>{{$product->description}}</td>
+                            <td >{{$product->description}}</td>
                             <td>{{$product->hit}}</td>
                             <td>{{$product->created_at->diffForHumans()}}</td>
                             <td>{!!$product->status ==0 ? "<span class='text-danger'> Pasif </span>" : "<span class='text-success'> Aktif </span>" !!}</td>
-                            <td width="102px">
-                                <a href="#" title="Görüntüle" class="btn btn-sm btn-success"><i class="fa fa-eye"></i></a>
+                            <td>
+                                <a  href="#" title="Görüntüle" class="btn btn-sm btn-success"><i class="fa fa-eye"></i></a>
                                 <a href="#" title="Düzenle" class="btn btn-sm btn-primary"><i class="fa fa-pen"></i></a>
                                 <a href="#" title="Sil" class="btn btn-sm btn-danger"><i class="fa fa-times"></i></a>
                             </td>
