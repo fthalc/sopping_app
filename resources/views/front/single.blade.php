@@ -10,7 +10,14 @@
                     <div class="fs-5 mb-5">
                         <span style="font-weight: bolder">Ürünün Fiyatı : {{$product->price}} ₺</span>
                     </div>
-                    <p class="lead">{{$product->description}}</p>
+                    <div class="fs-5 mb-5">
+                        <span style="font-weight: bolder">Kategori : <a style="text-decoration: none"  href="{{route('category',$product->getCategory->slug)}}">{{$product->getCategory->name}}</a></span>
+                    </div>
+                    <div class="fs-5 mb-5">
+                        <span style="font-weight: bolder">Ürün Açıklaması</span>
+                        <p class="lead">{{$product->description}}</p>
+                    </div>
+
                     <form action="{{route('sepet.create',$product->id)}}" method="post">
                         @csrf
                         <input type="hidden" name="urun_id" value="{{$product->id}}">

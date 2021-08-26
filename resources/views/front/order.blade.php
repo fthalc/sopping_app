@@ -7,7 +7,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="alert alert-success">
-                            <strong>Success!</strong> This alert box could indicate a successful or positive action.
+                            <strong>Başarılı!</strong> Alışveriş Başarıyla Tamamlandı.
                         </div>
                         <div class="col-7 row-cols-md-1">
                               <div class="card">
@@ -15,9 +15,9 @@
                                     <table class="table table-borderless table-striped table-shopping-cart">
                                         <thead class="text-muted">
                                         <tr class="small text-uppercase">
-                                            <th scope="col">Product</th>
-                                            <th scope="col" width="120">Quantity</th>
-                                            <th scope="col" width="120">Price</th>
+                                            <th scope="col">Ürün</th>
+                                            <th scope="col" width="120">Adet</th>
+                                            <th scope="col" width="120">Fiyat</th>
                                             <th scope="col" class="text-right d-none d-md-block" width="200"></th>
                                         </tr>
                                         </thead>
@@ -30,7 +30,7 @@
                                                 <td>
                                                     <figure class="itemside align-items-center">
                                                         <div class="aside"><img style="width: 100px;" src="{{$sepet->getProduct->image}}" class="img-sm"></div>
-                                                        <figcaption class="info"> <a href="#" class="title text-dark" data-abc="true">{{$sepet->getProduct->name}}</a>
+                                                        <figcaption class="info">{{$sepet->getProduct->name}}
                                                         </figcaption>
                                                     </figure>
                                                 </td>
@@ -71,4 +71,5 @@
             </section>
         </div>
     </div>
+    @include('front.layouts.footer')
 @endsection

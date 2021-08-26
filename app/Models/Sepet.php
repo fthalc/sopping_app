@@ -10,10 +10,6 @@ class Sepet extends Model
     function getProduct(){
         return $this->hasOne('App\Models\Product','id','urun_id');
     }
-    function getCategory(){
-        return $this->hasOne('App\Models\Category','category_id','id');
-    }
-
 
     use HasFactory;
 }

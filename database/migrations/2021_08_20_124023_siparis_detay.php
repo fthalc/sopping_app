@@ -20,7 +20,7 @@ class SiparisDetay extends Migration
             $table->timestamps();
             $table->foreign('urun_id')
                 ->references('urun_id')
-                ->on('sepets');
+                ->on('sepets')->onDelete('cascade');
         });
     }
 

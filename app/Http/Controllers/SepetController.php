@@ -85,10 +85,22 @@ class SepetController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update( $id)
+    public function update(Request $request)
     {
-        return redirect('sepet');
-
+        $sepet = Sepet::find($request->id);
+        $sepet->urun_adet +=$request->urun_adet;
+        $sepet->update();
+        return redirect('/sepet');
+    }
+    public function remove(Request $request)
+    {
+        $sepet = Sepet::find($request->id);
+        if($sepet->urun_adet>1)
+        {
+            $sepet->urun_adet -=$request->urun_adet;
+        }
+        $sepet->update();
+        return redirect('/sepet');
     }
 
     /**

@@ -20,7 +20,7 @@ class Sepet extends Migration
             $table->timestamps();
             $table->foreign('urun_id')
                 ->references('id')
-                ->on('products');
+                ->on('products')->onDelete('cascade');
         });
     }
 

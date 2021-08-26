@@ -28,9 +28,7 @@
                 <form class="d-flex">
                 <a href="{{route('sepet')}}" class="btn btn-outline-dark" type="submit">
                     <i class="bi-cart-fill me-1"></i>
-
-                    Cart
-
+                    Sepet
                     <span class="badge bg-dark text-white ms-1 rounded-pill">{{\App\Models\Sepet::all()->sum('urun_adet')}}</span>
                 </a>
             </form>
