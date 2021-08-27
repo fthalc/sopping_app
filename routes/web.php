@@ -22,13 +22,15 @@ Route::prefix('admin')->name('admin.')->group(function (){
 //Admin işlemleri.... giriş yapmışsa
 Route::prefix('admin')->middleware('isAdmin')->name('admin.')->group(function (){
     Route::get('/panel','App\Http\Controllers\Back\Dashboard@index')->name('dashboard');
+    //Product Route
     Route::get('urunler/silinenler','App\Http\Controllers\Back\ProductController@trashed')->name('trashed.product');
     Route::get('urunler/harddelete/{id}','App\Http\Controllers\Back\ProductController@hardDelete')->name('hard.delete.product');
     Route::resource('urunler','App\Http\Controllers\Back\ProductController');
     Route::get('/switch','App\Http\Controllers\Back\ProductController@switch')->name('switch');
     Route::get('urunler/delete/{id}','App\Http\Controllers\Back\ProductController@delete')->name('delete.product');
-
     Route::get('urunler/recover/{id}','App\Http\Controllers\Back\ProductController@recover')->name('recover.product');
+    //Category Route
+    Route::get('/kategoriler','App\Http\Controllers\Back\CategoryController@index')->name('category.index');
     Route::get('/cikisyap','App\Http\Controllers\Back\AuthController@logout')->name('logout');
 });
 Route::get('/','App\Http\Controllers\Front\Homepage@index')->name('homepage');

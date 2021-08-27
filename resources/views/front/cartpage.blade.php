@@ -107,3 +107,4 @@
     <br>
     @include('front.layouts.footer')
 @endsection
+
