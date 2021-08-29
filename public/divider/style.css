@@ -51,3 +51,10 @@ header .overlay {
         display: none;
     }
 }
+
+.h1 {
+    position: absolute;
+    top: 30vh;
+    left: 70vh;
+    font-weight: bolder;
+}

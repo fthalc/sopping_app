@@ -10,6 +10,16 @@
                         <h6 class="m-0 font-weight-bold text-primary">Kategori Oluştur</h6>
                     </div>
                     <div class="card-body">
+                        <form method="post" action="{{route('admin.category.create')}}">
+                            @csrf
+                            <div class="form-group">
+                                <label>Kategori Adı</label>
+                                <input type="text" class="form-control" name="category" required>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-block"> Ekle</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -30,17 +40,15 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($products as $product)
+                                @foreach($categories as $category)
                                     <tr>
-                                        <td>{{$product->price}} ₺</td>
-                                        <td>{{$product->price}} ₺</td>
+                                        <td>{{$category->name}}</td>
+                                        <td>{{$category->productCount()}}</td>
                                         <td>
-                                            <input class="switch" product-id="{{$product->id}}" data-on="Aktif" data-off="Pasif" @if($product->status == 1) checked @endif  type="checkbox"  data-toggle="toggle" data-onstyle="success" data-offstyle="danger">
+                                            <input class="switch" category-id="{{$category->id}}" data-on="Aktif" data-off="Pasif" @if($category->status == 1) checked @endif  type="checkbox"  data-toggle="toggle" data-onstyle="success" data-offstyle="danger">
                                         </td>
                                         <td>
-                                            <a target="_blank" href="{{route('single',[$product->getCategory->slug,$product->slug])}}" title="Görüntüle" class="btn btn-sm btn-success"><i class="fa fa-eye"></i></a>
-                                            <a href="{{route('admin.urunler.edit',$product->id)}}" title="Düzenle" class="btn btn-sm btn-primary"><i class="fa fa-pen"></i></a>
-                                            <a href="{{route('admin.delete.product',$product->id)}}" title="Sil" class="btn btn-sm btn-danger"><i class="fa fa-times"></i></a>
+                                            
                                         </td>
                                     </tr>
                                 @endforeach
@@ -53,4 +61,20 @@
         </div>
     </div>
 @endsection
-
+@section('css')
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+@endsection
+@section('js')
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+    <script>
+        $(function() {
+            $('.switch').change(function() {
+                id = $(this)[0].getAttribute('category-id');
+                statu=$(this).prop('checked');
+                $.get("{{route('admin.category.switch')}}",{id:id,statu:statu},function (data, status){
+                    console.log(data);
+                });
+            })
+        })
+    </script>
+@endsection

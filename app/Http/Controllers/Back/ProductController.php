@@ -156,8 +156,8 @@ class ProductController extends Controller
     }
     public function hardDelete($id){
         $product = Product::onlyTrashed()->find($id);
-        if(File::exists($product->image)){
-            File::delete(public_path('uploads',$product->image));
+        if(File::exists(public_path('uploads',$product->image))){
+            unlink(public_path($product->image));
         }
         $product->forceDelete();
         toastr()->success('Başarılı', 'Ürün başarıyla silindi.');

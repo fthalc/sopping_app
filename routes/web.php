@@ -31,6 +31,8 @@ Route::prefix('admin')->middleware('isAdmin')->name('admin.')->group(function ()
     Route::get('urunler/recover/{id}','App\Http\Controllers\Back\ProductController@recover')->name('recover.product');
     //Category Route
     Route::get('/kategoriler','App\Http\Controllers\Back\CategoryController@index')->name('category.index');
+    Route::post('/kategoriler/create','App\Http\Controllers\Back\CategoryController@create')->name('category.create');
+    Route::get('/kategori/status','App\Http\Controllers\Back\CategoryController@switch')->name('category.switch');
     Route::get('/cikisyap','App\Http\Controllers\Back\AuthController@logout')->name('logout');
 });
 Route::get('/','App\Http\Controllers\Front\Homepage@index')->name('homepage');
