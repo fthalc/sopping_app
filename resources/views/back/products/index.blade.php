@@ -45,7 +45,7 @@
                             </td>
                             <td>
                                 <a target="_blank" href="{{route('single',[$product->getCategory->slug,$product->slug])}}" title="Görüntüle" class="btn btn-sm btn-success"><i class="fa fa-eye"></i></a>
-                                <a href="{{route('admin.urunler.edit',$product->id)}}" title="Düzenle" class="btn btn-sm btn-primary"><i class="fa fa-pen"></i></a>
+                                <a href="{{route('admin.urunler.edit',$product->id)}}" title="Düzenle" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></a>
                                 <a href="{{route('admin.delete.product',$product->id)}}" title="Sil" class="btn btn-sm btn-danger"><i class="fa fa-times"></i></a>
                             </td>
                         </tr>

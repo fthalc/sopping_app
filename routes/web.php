@@ -32,7 +32,10 @@ Route::prefix('admin')->middleware('isAdmin')->name('admin.')->group(function ()
     //Category Route
     Route::get('/kategoriler','App\Http\Controllers\Back\CategoryController@index')->name('category.index');
     Route::post('/kategoriler/create','App\Http\Controllers\Back\CategoryController@create')->name('category.create');
+    Route::post('/kategoriler/update','App\Http\Controllers\Back\CategoryController@update')->name('category.update');
     Route::get('/kategori/status','App\Http\Controllers\Back\CategoryController@switch')->name('category.switch');
+    Route::get('/kategori/getData','App\Http\Controllers\Back\CategoryController@getData')->name('category.getdata');
+
     Route::get('/cikisyap','App\Http\Controllers\Back\AuthController@logout')->name('logout');
 });
 Route::get('/','App\Http\Controllers\Front\Homepage@index')->name('homepage');

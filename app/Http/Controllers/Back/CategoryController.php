@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Back;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Product;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -14,6 +15,7 @@ class CategoryController extends Controller
         $categories = Category::orderBy('name','ASC')->get();
         return view('back.categories.index')->with(['categories'=>$categories]);
     }
+
     public function create(Request $request){
         $isExist = Category::whereSlug(Str::slug($request->category))->first();
         if($isExist){
@@ -27,6 +29,27 @@ class CategoryController extends Controller
         toastr()->success('Kategori Başarıyla oluşturuldu');
         return redirect()->back();
     }
+
+    public function update(Request $request){
+        $isExist = Category::whereName(Str::slug($request->category))->first();
+        if($isExist){
+            toastr()->error($request->category.' adında bir kategori zaten mevcut.');
+            return redirect()->back();
+        }
+        $category = Category::find($request->id);
+        $category->name = $request->category;
+        $category->slug =Str::slug($request->category);
+        $category->save();
+        toastr()->success('Kategori Başarıyla Güncellendi');
+        return redirect()->back();
+    }
+
+
+    public function getdata(Request  $request){
+        $category = Category::findOrFail($request->id);
+        return response()->json($category);
+    }
+
     public function switch(Request  $request){
         $category = Category::findOrFail($request->id);
         $category->status = $request->status ? 1 : 0;
